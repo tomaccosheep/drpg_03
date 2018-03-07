@@ -1,0 +1,10 @@
+180222
+I transcribed everything, my /scripts/ is still untested. I'm running docker-compose up --build
+The sql server host should be drp_db_1
+I changed the host name in settings.py, and the container names in docker-compose.yml
+I'm running mysql on the container, and creating the appropriate user and table
+
+From stack overflow:
+SET PASSWORD = PASSWORD('your_new_password');
+
+I ran the commands from my scripts manually, and I think I set things up properly.
