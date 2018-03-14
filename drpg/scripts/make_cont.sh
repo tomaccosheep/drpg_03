@@ -4,7 +4,7 @@ docker container stop $1
 docker rm $1
 #docker create --name $1 -w /app ubuntu python3 replacer.py
 #docker create -it --name $1 -w /app ubuntu /bin/bash /app/user_entrypoint.sh
-docker create -it --name $1 -w /app --expose 80 ubuntu /bin/bash
+docker create -it --name $1 -w /app --expose 80 drpg_drpg /bin/bash
 # then run docker cp
 docker cp /app/default/user_entrypoint.sh $1:/app
 docker cp /app/make_dj/drpg_template/user_project/. $1:/app

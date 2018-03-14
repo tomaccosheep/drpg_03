@@ -14,7 +14,7 @@ services:
     entrypoint: /entrypoint.sh
     command: mysqld
     volumes:
-      - "./mysql/data:/var/lib/mysql"
+      - "db-data:/var/lib/mysql"
   drpg:
     build: primary_container/
     depends_on:
@@ -28,6 +28,14 @@ services:
       - "8000:8000"
     entrypoint: ["/bin/bash", "/app/primary_container/entrypoint.sh"]
     #command: ["/app/entrypoint.sh"]
-
+  nginx:
+    build: nginx/
+    networks:
+      - "app"
+    ports:
+      - "8080:80"
 networks:
   app:
+
+volumes:
+  db-data:
