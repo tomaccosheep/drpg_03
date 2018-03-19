@@ -25,6 +25,9 @@ my_env = os.environ.copy()
 my_env["DJANGO_SETTINGS_MODULE"] = "user_project.settings"
 # }}
 
+def hello(request):
+    return render(request, 'make_dj/hello.html')
+
 def index(request, project_id):
     proj = Play_Project.objects.get(unique_id=project_id)
     context_dict = {'con_001': proj.con_001,

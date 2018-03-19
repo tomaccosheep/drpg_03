@@ -26,10 +26,13 @@ Your ID: {{ id }}
         <div id="view" class="object dj_button nosel">View </div>
         <div id="kill" class="object dj_button nosel">Kill </div>
     </div>
-<a href="/view/{{project_id }}">link</a>
+<a href="localhost:8080/project/">link</a>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="{% static 'js/site.js' %}"></script>
     <script type='text/javascript'>
+        var myProjectId = '{{ project_id }}';
+        console.log(myProjectId)
+        var myHeaders = new Headers({'proxy_host' : myProjectId});
     </script>
+<script src="{% static 'js/site.js' %}"></script>
 </body>
 </html>
