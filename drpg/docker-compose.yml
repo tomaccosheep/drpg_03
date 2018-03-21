@@ -25,6 +25,7 @@ services:
     networks:
       - "app"
     ports:
+      - "9020:9020"
       - "8000:8000"
     entrypoint: ["/bin/bash", "/app/primary_container/entrypoint.sh"]
     #command: ["/app/entrypoint.sh"]
